@@ -1,0 +1,46 @@
+<div class="section white">
+  <div class="fixed-wrapper">
+    <h1>水果列表 <small><%= link_to '新增水果', new_f_post_path, class:'btn btn-small' %></small></h1>
+  </div>
+  <div class="container">
+      <table class="table table-striped" style="margin-top: -100px;">
+        <thead>
+          <tr>
+            <th>水果</th>
+            <th>名称</th>
+            <th>零售价格</th>
+            <th>成本价格</th>
+            <th>折扣率</th>
+            <th>重量/份</th>
+            <th>上架状态</th>
+            <th>管理</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @f_posts.each do |f_post| %>
+            <tr>
+              <td>image</td>
+              <td><%= f_post.title %></td>
+              <td><%= f_post.sell_price %></td>
+              <td><%= f_post.base_price %></td>
+              <td><%= f_post.discount %></td>
+              <td><%= f_post.f_weigth %></td>
+              <td><%= f_post.add_stat %></td>
+              <td>
+                <%= link_to 'Edit', edit_f_post_path(f_post) %> |
+                <%= link_to 'Destroy', f_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      
+      
+      
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+zh-CN:
+  views:
+    pagination:
+      first: "&laquo; 返回首页"
+      last: "最后一页 &raquo;"
+      previous: "&lsaquo; 前一页"
+      next: "后一页 &rsaquo;"
+      truncate: "..."
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email: 
+              blank: '不能为空'
+              invalid: '为无效地址'
+            password:
+              blank: '不能为空'
+              confirmation: '两次输入不一致'
+              too_short: '太短,请大于8个字符'
+            password_confirmation:
+              confirmation: "与密码输入不一致"
+            current_password:
+              blank: '不能为空'
+              invalid: '为无效地址'
+    models:
+      user: '用户'
+    attributes:
+      user:
+        email: '电子邮件'
+        password: '密码'
+        password_confirmation: "重复密码"
+        current_password: '当前密码'

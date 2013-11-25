@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weiguo</title>
+  <%= stylesheet_link_tag "application", "bootstrap.css", "fonts/font-awesome/css/font-awesome.min", "style", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="dn365">
+  <!-- Bootstrap core CSS -->  
+  <!-- Montserrat: http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Montserrat -->
+  <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:700,100' rel='stylesheet' type='text/css'> -->
+  <!-- Stylesheet -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "respond.min" %>
+  <![endif]-->
+</head>
+<body>
+<% if user_signed_in? and (current_user.has_role? :admin) %>
+  <%= render "/layouts/manage/navbar" %>
+  <%= yield %>
+  <%= render "/layouts/manage/footer" %>
+<% else %>
+  <%= render "/layouts/sites/navbar" %>
+  <%= render "/layouts/sites/search" %>
+  <%= yield %>
+  <%= render "/layouts/sites/footer" %>
+<% end %>  
+
+<%= javascript_include_tag "masonry.pkgd.min", "imagesloaded.pkgd.min", "init" %>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @f_post.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @f_post.desc %>
+</p>
+
+<p>
+  <strong>Sell price:</strong>
+  <%= @f_post.sell_price %>
+</p>
+
+<p>
+  <strong>Base price:</strong>
+  <%= @f_post.base_price %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @f_post.discount %>
+</p>
+
+<p>
+  <strong>F weigth:</strong>
+  <%= @f_post.f_weigth %>
+</p>
+
+<p>
+  <strong>Add stat:</strong>
+  <%= @f_post.add_stat %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @f_post.detail %>
+</p>
+
+<%= link_to 'Edit', edit_f_post_path(@f_post) %> |
+<%= link_to 'Back', f_posts_path %>
