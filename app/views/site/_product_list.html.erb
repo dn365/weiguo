@@ -1,3 +1,4 @@
+<%= javascript_include_tag "site" %>
 <div id="team" class="section">
   <div class="fixed-wrapper">
     <h1>鲜果列表</h1>
@@ -6,53 +7,36 @@
   <div class="container">  
     <div class="content">
       <div class="row">
+        <% @posts.each do |post| %>
         <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
           <div class="team-portrait block">              
             <div class="title">
-              <h2>Michael Chang</h2>
-              <h3 class="italic">Developer</h3>
+              <h2><%= post.title %></h2>
             </div>
             <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait2.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
+              <!-- <a href="#"> -->
+                <!-- <img src="/assets/portrait2.jpg" alt="Team Portrait">  -->
+                <%= image_tag post.f_image.thumb %>             
+                <!-- <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span> -->              
+              <!-- </a> -->
             </div>
-            <p>Hi, I'm Michael Chang. I am a developer who specializes on CSS, HTML and Javascript. I'm excited to work more and learn more about design.</p>
+            <% a = rand(5) %>
+            <p><strong>热购指数:</strong> <%= raw "<i class='icon-heart' style='color: #dd3497;'></i>" * a %></p>
+            <p><%= post.desc %></p>
+            <p>重量: <%= post.f_weigth %>克/份</p>
             <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
+              <a href="javascript:void(0)" data-toggle="tooltip" title="零售价"><i class="icon-leaf"></i>￥<%= post.sell_price %></a>
+              <a href="javascript:void(0)" data-toggle="tooltip" title="点击购买" f_id="<%= post.id %>" class="f_post_a_link"><i class="icon-shopping-cart"></i>购买</a>
+              
+              <!-- <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a> -->
+              <!-- <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a> -->
               <span class="stretch"></span>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">
-            <div class="title">
-              <h2>Jane Doe</h2>
-              <h3 class="italic">Founder</h3>
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait1.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>I am Jane Doe, a web designer who loves designing and building websites. I founded this company to help bring web design to those who need it.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
+        <% end %>
+        
+        <!--<div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
           <div class="team-portrait block">
             <div class="title">
               <h2>Jessica Smith</h2>
@@ -74,123 +58,8 @@
               <span class="stretch"></span>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">
-            <div class="title">
-              <h2>Jessica Smith</h2>
-              <h3 class="italic">Graphic Designer</h3>                  
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait3.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>My name is Jessica Smith. I work mainly as a graphic designer, designing beautiful web elements, buttons, backgrounds, and really anything that is needed.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">
-            <div class="title">
-              <h2>Jessica Smith</h2>
-              <h3 class="italic">Graphic Designer</h3>                  
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait3.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>My name is Jessica Smith. I work mainly as a graphic designer, designing beautiful web elements, buttons, backgrounds, and really anything that is needed.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">              
-            <div class="title">
-              <h2>Michael Chang</h2>
-              <h3 class="italic">Developer</h3>
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait2.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>Hi, I'm Michael Chang. I am a developer who specializes on CSS, HTML and Javascript. I'm excited to work more and learn more about design.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">
-            <div class="title">
-              <h2>Jane Doe</h2>
-              <h3 class="italic">Founder</h3>
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait1.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>I am Jane Doe, a web designer who loves designing and building websites. I founded this company to help bring web design to those who need it.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">
-            <div class="title">
-              <h2>Jessica Smith</h2>
-              <h3 class="italic">Graphic Designer</h3>                  
-            </div>
-            <div class="portrait">
-              <a href="#">
-                <img src="/assets/portrait3.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
-              </a>
-            </div>
-            <p>My name is Jessica Smith. I work mainly as a graphic designer, designing beautiful web elements, buttons, backgrounds, and really anything that is needed.</p>
-            <div class="social-media">
-              <a href="#" data-toggle="tooltip" title="twitter"><i class="icon-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" title="facebook"><i class="icon-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" title="linkedin"><i class="icon-linkedin"></i></a>
-              <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a>
-              <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a>
-              <span class="stretch"></span>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>     
     </div>
   </div>
-</div><!-- /.container -->
+</div>

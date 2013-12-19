@@ -2,12 +2,12 @@ class CreateFPosts < ActiveRecord::Migration
   def change
     create_table :f_posts do |t|
       t.string :title
-      t.string :desc, limit: 120
+      t.string :desc, limit: 250
       t.decimal :sell_price, precision: 8, scale: 2
       t.decimal :base_price, precision: 8, scale: 2
       t.decimal :discount, precision: 3, scale: 1
       t.integer :f_weigth
-      t.boolean :add_stat
+      t.boolean :add_stat, defaule: false
       t.text :detail
 
       t.timestamps

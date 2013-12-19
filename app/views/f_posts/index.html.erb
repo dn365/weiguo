@@ -20,16 +20,16 @@
         <tbody>
           <% @f_posts.each do |f_post| %>
             <tr>
-              <td>image</td>
+              <td><%= image_tag f_post.f_image.thumb, size:"40x25", class: "img-rounded" %></td>
               <td><%= f_post.title %></td>
-              <td><%= f_post.sell_price %></td>
-              <td><%= f_post.base_price %></td>
+              <td>￥<%= f_post.sell_price %></td>
+              <td>￥<%= f_post.base_price %></td>
               <td><%= f_post.discount %></td>
-              <td><%= f_post.f_weigth %></td>
-              <td><%= f_post.add_stat %></td>
+              <td><%= f_post.f_weigth %>克</td>
+              <td><%= f_post.add_stat ? "已上架" : "等待上架" %></td>
               <td>
-                <%= link_to 'Edit', edit_f_post_path(f_post) %> |
-                <%= link_to 'Destroy', f_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to '编辑', edit_f_post_path(f_post) %> |
+                <%= link_to '删除', f_post, method: :delete, data: { confirm: '确定删除吗?' } %>
               </td>
             </tr>
           <% end %>
@@ -37,6 +37,7 @@
       </table>
 
       <br>
+      <%= paginate @f_posts, theme: "bootstrop_theme", :window => 2 %>
 
       
       

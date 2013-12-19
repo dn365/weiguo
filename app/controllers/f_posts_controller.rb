@@ -7,7 +7,7 @@ class FPostsController < ApplicationController
   # GET /f_posts
   # GET /f_posts.json
   def index
-      @f_posts = FPost.all
+      @f_posts = FPost.order("created_at DESC").page params[:page]
   end
 
   # GET /f_posts/1
@@ -34,7 +34,7 @@ class FPostsController < ApplicationController
 
     respond_to do |format|
       if @f_post.save
-        format.html { redirect_to @f_post, notice: 'F post was successfully created.' }
+        format.html { redirect_to f_posts_url, notice: 'F post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @f_post }
       else
         format.html { render action: 'new' }
@@ -48,7 +48,7 @@ class FPostsController < ApplicationController
   def update
     respond_to do |format|
       if @f_post.update(f_post_params)
-        format.html { redirect_to @f_post, notice: 'F post was successfully updated.' }
+        format.html { redirect_to f_posts_url, notice: 'F post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -76,7 +76,7 @@ class FPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def f_post_params
-      params.require(:f_post).permit(:title, :desc, :sell_price, :base_price, :discount, :f_weigth, :add_stat, :detail)
+      params.require(:f_post).permit(:title, :desc, :f_image, :sell_price, :base_price, :discount, :f_weigth, :add_stat, :detail)
     end
     
     
