@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201073642) do
+ActiveRecord::Schema.define(version: 20140313082905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "f_posts", force: true do |t|
     t.string   "title"
@@ -31,6 +36,15 @@ ActiveRecord::Schema.define(version: 20131201073642) do
   end
 
   add_index "f_posts", ["title"], name: "index_f_posts_on_title", unique: true, using: :btree
+
+  create_table "line_items", force: true do |t|
+    t.integer  "f_post_id"
+    t.integer  "cart_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantiity",  default: 1
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

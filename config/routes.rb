@@ -1,18 +1,28 @@
 Weiguo::Application.routes.draw do
-  
+
   get "manage" => "admin#index", as: :admin
   get "site/index"
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout' }
   get "users/index", as:"users"
   resources :f_posts
 
+  post "cart/create", as: "cart_create"
+  get "cart" => "carts#show", as: "show_cart"
+  put "cart/:id" => "carts#update"
+  # get "cats/:id" => "carts#"
+
+
+  get "weixin" => "weixin#index"
+  post "weixin" => "weixin#reply", as: "weixin_post"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  
+
   root 'site#index'
+
+  # root "weixin#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -48,7 +58,7 @@ Weiguo::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

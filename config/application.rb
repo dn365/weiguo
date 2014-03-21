@@ -18,17 +18,20 @@ module Weiguo
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    I18n.enforce_available_locales = false
     config.i18n.default_locale = 'zh-CN'
-        
-    
+
+    config.middleware.insert_after ActionDispatch::ParamsParser, ActionDispatch::XmlParamsParser
+
+
     # #devise layout
     # config.to_prepare do
     #   Devise::SessionsController.layout "application"
     #   Devise::RegistrationsController.layout "application"
     #   Devise::ConfirmationsController.layout "application"
-    #   Devise::UnlocksController.layout "application"            
+    #   Devise::UnlocksController.layout "application"
     #   Devise::PasswordsController.layout "application"
     # end
-    
+
   end
 end

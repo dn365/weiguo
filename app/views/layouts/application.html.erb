@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="dn365">
-  <!-- Bootstrap core CSS -->  
+  <!-- Bootstrap core CSS -->
   <!-- Montserrat: http://www.google.com/fonts/#QuickUsePlace:quickUse/Family:Montserrat -->
   <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:700,100' rel='stylesheet' type='text/css'> -->
   <!-- Stylesheet -->
@@ -24,10 +24,9 @@
   <%= render "/layouts/manage/footer" %>
 <% else %>
   <%= render "/layouts/sites/navbar" %>
-  <%= render "/layouts/sites/search" %>
   <%= yield %>
   <%= render "/layouts/sites/footer" %>
-<% end %>  
+<% end %>
 
 <%= javascript_include_tag "masonry.pkgd.min", "imagesloaded.pkgd.min", "init" %>
 </body>

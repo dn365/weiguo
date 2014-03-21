@@ -1,0 +1,77 @@
+<!-- <div class="cart">
+  <a href="#"><i class='icon-shopping-cart'></i></a>
+</div> -->
+<div class="fixed-wrapper">
+    <h1 class="affix-top">购物车</h1>
+</div>
+
+<div id="name" class="cart-table-show">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>商品名称</th>
+        <th>数量</th>
+        <th>单价</th>
+        <th></th>
+      </tr>
+      <tboby>
+        <% @cart.each do |item| %>
+          <tr>
+            <td>
+              <%= image_tag item.f_post.f_image.thumb, size:"40x40", class:"img-rounded" %>
+              <%= item.f_post.title %>
+            </td>
+            <td><%= item.quantiity %></td>
+            <td>￥<%= item.f_post.sell_price %></td>
+            <td>删除</td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+  <hr/>
+
+  <div class="price_total">
+    <div class="col-md-12">
+      <h3 style="float: right;margin-right: 50px;">共计: <strong style="color: red;">￥<%= @total_price %></strong></h3>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div id="cart-content" class="search" style="margin-top: 80px;">
+  <div class="content" style="width: 350px; background-color: #f5f5f5;">
+    <ul class="list-unstyled">
+      <% @cart.each do |item| %>
+        <li style="margin-top: 2px; background-color: <%= cycle('','rgba(199, 234, 229, 0.47)') %>;">
+          <div class="row">
+            <div class="col-md-9">
+              <%= image_tag item.f_post.f_image.thumb, size:"40x40", class:"img-rounded" %>
+              <%= item.f_post.title %>
+            </div>
+            <div class="pull-right" style="margin-right: 38px;">
+              <h4><strong style="color: red;">￥<%= item.f_post.sell_price %></strong><small> x<%= item.quantiity %></small></h4>
+              <p class="text-right"><a href="#" class="btn-primary btn-xs">删除</a></p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <br />
+    <div class="total-contat row">
+      <div class="col-md-7">
+        <p class="text-right">
+          共 <strong style="color: red;">20</strong> 件商品</p>
+      </div>
+      <div class="col-md-5">
+        <p>共计: <strong style="color: red;">￥120</strong></p>
+      </div>
+      <button class="btn pull-right" style="margin-right: 25px;">
+        去购物车结算
+      </button>
+      <button class="btn pull-right" id="add-cont-button" style="margin-right: 25px;">
+        继续购物
+      </button>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,9 @@
+---
+applications:
+- name: weiguo
+  memory: 256M
+  instances: 1
+  command: "bundle exec rake db:migrate"
+  host: weiguo
+  domain: cfapps.io
+  path: .

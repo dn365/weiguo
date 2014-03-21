@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
-
+# gem 'rails', '4.0.0' 
+gem 'rails', '4.0.3'  # upgrade rails
+ 
 # Use postgresql as the database for Active Record
-#gem 'pg'
-gem 'mysql2'
+gem 'pg', "~> 0.17.1"
+#gem 'mysql2'
 gem 'devise'
 gem "cancan"
 gem 'rolify'
@@ -13,6 +14,7 @@ gem 'kaminari'
 gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'actionpack-xml_parser'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

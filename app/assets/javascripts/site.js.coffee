@@ -5,7 +5,10 @@
 $ ->
   $('.f_post_a_link').click ->
     f_id = $(this).attr("f_id")
-    total_nub = $('#test-aaa').attr("total_nub")
-    total = parseInt(total_nub) + 1
-    $('#test-aaa').attr("total_nub",total)
-    $('#test-aaa i').text("购物车("+total+")")
+    # total_nub = $('#test-aaa').attr("total_nub")
+    $.post "/carts/create", {"f_post_id": f_id},
+    (data) ->
+      if data.status == 201
+        # total = parseInt(total_nub) + 1
+        # $('#test-aaa').attr("total_nub",total)
+        $('#test-aaa i').text("购物车("+data.total+")")

@@ -3,49 +3,52 @@
   <div class="fixed-wrapper">
     <h1>鲜果列表</h1>
   </div>
-  
-  <div class="container">  
+
+  <div class="container">
     <div class="content">
       <div class="row">
         <% @posts.each do |post| %>
         <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-          <div class="team-portrait block">              
+          <div class="team-portrait block">
             <div class="title">
               <h2><%= post.title %></h2>
             </div>
             <div class="portrait">
-              <!-- <a href="#"> -->
-                <!-- <img src="/assets/portrait2.jpg" alt="Team Portrait">  -->
-                <%= image_tag post.f_image.thumb %>             
-                <!-- <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span> -->              
-              <!-- </a> -->
+                <%= image_tag post.f_image.thumb %>
             </div>
             <% a = rand(5) %>
-            <p><strong>热购指数:</strong> <%= raw "<i class='icon-heart' style='color: #dd3497;'></i>" * a %></p>
-            <p><%= post.desc %></p>
-            <p>重量: <%= post.f_weigth %>克/份</p>
+            <p>
+              <strong>热购指数:</strong>
+              <%= raw "<i class='icon-heart' style='color: #dd3497;'></i>" * a %></p>
+            <p>
+              <%= post.desc %>
+            </p>
+            <p>
+              重量: <%= post.f_weigth %>克/份
+            </p>
             <div class="social-media">
-              <a href="javascript:void(0)" data-toggle="tooltip" title="零售价"><i class="icon-leaf"></i>￥<%= post.sell_price %></a>
-              <a href="javascript:void(0)" data-toggle="tooltip" title="点击购买" f_id="<%= post.id %>" class="f_post_a_link"><i class="icon-shopping-cart"></i>购买</a>
-              
-              <!-- <a href="#" data-toggle="tooltip" title="github"><i class="icon-github"></i></a> -->
-              <!-- <a href="#" data-toggle="tooltip" title="pinterest"><i class="icon-pinterest"></i></a> -->
+              <a href="javascript:void(0)" data-toggle="tooltip" title="零售价">
+                <i class="icon-leaf"></i>￥<%= post.sell_price %>
+              </a>
+              <a href="javascript:void(0)" data-toggle="tooltip" title="点击购买" f_id="<%= post.id %>" class="f_post_a_link">
+                <i class="icon-shopping-cart"></i>购买
+              </a>
               <span class="stretch"></span>
             </div>
           </div>
         </div>
         <% end %>
-        
+
         <!--<div class="col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
           <div class="team-portrait block">
             <div class="title">
               <h2>Jessica Smith</h2>
-              <h3 class="italic">Graphic Designer</h3>                  
+              <h3 class="italic">Graphic Designer</h3>
             </div>
             <div class="portrait">
               <a href="#">
-                <img src="/assets/portrait3.jpg" alt="Team Portrait">              
-                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>                    
+                <img src="/assets/portrait3.jpg" alt="Team Portrait">
+                <span class="overlay"><span class="valign"></span><i class="icon-envelope"></i></span>
               </a>
             </div>
             <p>My name is Jessica Smith. I work mainly as a graphic designer, designing beautiful web elements, buttons, backgrounds, and really anything that is needed.</p>
@@ -59,7 +62,7 @@
             </div>
           </div>
         </div> -->
-      </div>     
+      </div>
     </div>
   </div>
 </div>
