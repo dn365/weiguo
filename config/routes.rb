@@ -6,7 +6,7 @@ Weiguo::Application.routes.draw do
   get "users/index", as:"users"
   resources :f_posts
 
-  post "cart/create", as: "cart_create"
+  post "cart/create" => "carts#create", as: "cart_create"
   get "cart" => "carts#show", as: "show_cart"
   put "cart/:id" => "carts#update"
   # get "cats/:id" => "carts#"
