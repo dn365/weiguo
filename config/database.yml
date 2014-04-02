@@ -15,7 +15,7 @@ development:
   database: weiguo_dev
   pool: 5
   username: weiguo
-  password: weiguo$me
+  password: hzrw_weiguo
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: weiguo_test
   pool: 5
   username: weiguo
-  password: weiguo$me
+  password: hzrw_weiguo
   host: localhost
 production:
   adapter: mysql2
@@ -37,5 +37,5 @@ production:
   database: weiguo_production
   pool: 5
   username: weiguo
-  password: weiguo$me
+  password: hzrw_weiguo
   host: localhost

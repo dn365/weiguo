@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+unless User.find_by_email("weiguo_admin@weiguo.me")
+  user = User.new(email: "weiguo_admin@weiguo.me", password: "weiguo@hzrw", password_confirmation: "weiguo@hzrw")
+  # user.skip_confirmation!
+  user.save
+  user.add_role :admin
+end
