@@ -9,6 +9,4 @@ $ ->
     $.post "/carts/create", {"f_post_id": f_id},
     (data) ->
       if data.status == 201
-        # total = parseInt(total_nub) + 1
-        # $('#test-aaa').attr("total_nub",total)
-        $('#test-aaa i').text("购物车("+data.total+")")
+        $('#carts-quantity i').text("购物车("+data.total+")")

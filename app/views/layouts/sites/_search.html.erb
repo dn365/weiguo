@@ -1,5 +1,3 @@
 <div class="search">
-  <%= link_to raw("<i class='icon-shopping-cart'>购物车(#{@cart ? @cart.sum{|i| i.quantiity } : 0})</i>"), show_cart_url, id:"test-aaa" %>
+  <%= link_to raw("<i class='icon-shopping-cart'>购物车(#{@cart ? @cart.sum{|i| i.quantiity } : 0})</i>"), show_cart_url, id:"carts-quantity" %>
 </div>
-
-<%= javascript_include_tag "cart" %>
