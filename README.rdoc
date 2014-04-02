@@ -1,6 +1,5 @@
 == README
 
-/?signature=17765e8fb65df6e7cc27550c76444f65be5eb071&echostr=5986656148220731606&timestamp=1394270422&nonce=1393877002
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
