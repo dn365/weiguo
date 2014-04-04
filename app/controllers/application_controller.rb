@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     else
       if @cart = current_cart
         @cart.line_items.update_all({user_id:current_user})
-
+        root_url
         # current_user.line_items.line_items.select("f_post_id, sum(quantiity) as quantiity").group(:f_post_id)
       else
         root_url

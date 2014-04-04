@@ -27,6 +27,19 @@ class CartsController < ApplicationController
   def update
   end
 
+
+  def destroy
+    @product = params[:f_post]
+    if @user = current_user
+      @f_post = @user.line_items.where(f_post_id: @product)
+    else
+      @f_post = current_cart.line_items.where(f_post_id: @product)
+    end
+    @f_post.destroy_all
+    respond_to do |format|
+      format.html {redirect_to show_cart_url}
+    end
+  end
   # private
 
 

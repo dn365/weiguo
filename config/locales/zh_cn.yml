@@ -11,9 +11,10 @@ zh-CN:
       models:
         user:
           attributes:
-            email: 
+            email:
               blank: '不能为空'
               invalid: '为无效地址'
+              taken: '已经存在.'
             password:
               blank: '不能为空'
               confirmation: '两次输入不一致'

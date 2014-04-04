@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>Weiguo</title>
-  <%= stylesheet_link_tag "application", "bootstrap.css", "fonts/font-awesome/css/font-awesome.min", "style", "data-turbolinks-track" => false %>
+  <%= stylesheet_link_tag "application", "bootstrap", "fonts/font-awesome/css/font-awesome.min", "style", "data-turbolinks-track" => false %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "masonry.pkgd.min", "imagesloaded.pkgd.min", "init" %>
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +29,6 @@
   <%= render "/layouts/sites/footer" %>
 <% end %>
 
-<%= javascript_include_tag "masonry.pkgd.min", "imagesloaded.pkgd.min", "init" %>
+
 </body>
 </html>

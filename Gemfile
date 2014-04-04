@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'  # upgrade rails
  
 # Use postgresql as the database for Active Record
-# gem 'pg', "~> 0.17.1"
-gem 'mysql2'
+gem 'pg', "~> 0.17.1"
+# gem 'mysql2'
 gem 'devise'
 gem "cancan"
 gem 'rolify'
@@ -15,6 +15,7 @@ gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'actionpack-xml_parser'
+gem 'rest-client'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

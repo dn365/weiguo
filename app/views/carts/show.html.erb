@@ -22,24 +22,27 @@
               <%= item.f_post.title %>
             </td>
             <td>
-              <%= number_field_tag :quantiity, item.quantiity %>
+              <%= number_field_tag :quantiity, item.quantiity, min: 1 %>
+              <%= link_to "刷新", "#", class: "" %>
             </td>
             <td>￥<%= item.f_post.sell_price %></td>
-            <td><%= link_to "删除", "#", method: :delete, data: { confirm: '确定删除吗?'} %></td>
+            <td><%= link_to "删除", destroy_cart_url(item.f_post_id), method: :delete, data: { confirm: '确定删除吗?'} %></td>
           </tr>
         <% end %>
       </tbody>
   </table>
   <hr/>
-  <div class="price_total">
+  <div class="price_total col-md-12">
     <div class="col-md-12">
       <h3 style="float: right;margin-right: 50px;">共计: <strong style="color: red;">￥<%= @total_price %></strong></h3>
     </div>
+    <div id="name">
+      <%= link_to "继续购物", root_url, class:"btn" %>
+      <%= link_to "提交订购", "#", class:'btn' %>
+    </div>
   </div>
+
 </div>
 
-<div id="name">
-  <%= link_to "继续购物", "#" %>
-  <%= link_to "提交订购", "#" %>
-</div>
+
 <%= javascript_include_tag "cart" %>
