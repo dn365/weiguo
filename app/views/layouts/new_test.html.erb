@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+	<meta charset="utf-8">
+	<title>微果网 微生活 果营养 weiguo.me :)</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+<!-- Mobile Specific Metas
+================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+  <%= stylesheet_link_tag "vernimcss/base", "vernimcss/skeleton", "vernimcss/layout", "vernimcss/fwslider", "vernimcss/swipebox", "vernimcss/font-awesome.min", "vernimcss/linecons" %>
+  
+    <%= javascript_include_tag "vernimjs/jquery-1.9.1.min", "vernimjs/jquery-ui.min", "vernimjs/jquery.isotope.min", "vernimjs/css3-mediaqueries", "vernimjs/fwslider", "vernimjs/retina", "vernimjs/jquery.twitter", "vernimjs/parallax", "vernimjs/jquery.swipebox.min", "vernimjs/ios-orientationchange-fix", "vernimjs/jquery.scrollTo", "vernimjs/jquery.nav", "vernimjs/jquery.dropdown", "vernimjs/jquery.sticky", "vernimjs/jquery.quovolver", "vernimjs/custom" %>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<!-- Favicons
+================================================== -->
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+	
+<!-- Scripts
+================================================== -->
+
+	<!-- jQuery Library -->
+  
+
+	<%= csrf_meta_tags %>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//.parallax(xPosition, speedFactor, outerHeight) options:
+		//xPosition - Horizontal position of the element
+		//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+		//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+		$('.buy').parallax("50%", 0.4);
+		$('.work').parallax("50%", 0.3);
+		$('.testimonials').parallax("50%", 0.2);
+		$('.newsletter').parallax("50%", 0.1);
+	})
+	</script>
+
+ 
+</head>
+<body>
+
+<!-- SLIDER / Start
+=========================================== -->
+<div id="fwslider">
+	<div class="slider_container">
+		
+		<!-- slide one -->
+		<div class="slide"> 
+      <!-- <img src="images/slide-bg-1.jpg"> -->
+      <%= image_tag "vernimimages/slide-bg-1.jpg" %>
+			<div class="slide_content">
+				<div class="slide_content_wrap">
+					<div class="logo">
+            <!-- <img src="images/vernimimages/logo.png"> -->
+            <%= image_tag "vernimimages/logo.png" %>
+          </div>
+					<h4 class="title">微果网 ...</h4>
+					<p class="description">微生活 果营养, 为您提供最新鲜的水果营养餐.</p>
+					<a class="button readmore" href="#">网站真在建设中, 敬请期待 ...</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- slide two -->
+		<div class="slide"> 
+      <!-- <img src="images/slide-bg-2.jpg"> -->
+      <%= image_tag "vernimimages/slide-bg-2.jpg" %>
+			<div class="slide_content">
+				<div class="slide_content_wrap">
+					<div class="logo">
+            <!-- <img src="images/logo.png"> -->
+            <%= image_tag "vernimimages/logo.png" %>
+          </div>
+					<h4 class="title">微果网 ... </h4>
+					<p class="description">微生活 果营养, 为您提供最新鲜的水果营养餐.</p>
+					<a class="button readmore" href="#">网站真在建设中, 敬请期待 ...</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- slider navigation -->
+	<div class="timers"></div>
+	<div class="slidePrev"><span><i class="icon-chevron-left"></i></span></div>
+	<div class="slideNext"><span><i class="icon-chevron-right"></i></span></div>
+	
+</div> 
+
+	<header>
+		<nav>
+			<!-- nav menu -->
+			<ul class="clearfix">
+				<li><a class="current" href="#">首页</a></li>
+	      <!-- <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+                <li><a href="http://www.weidea.net">More themes</a></li> -->
+			</ul>
+			<a href="#" class="pull"><i class="icon-reorder"></i></a>
+		</nav>
+	</header>
+
+</body>
+</html>

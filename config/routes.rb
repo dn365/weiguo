@@ -2,6 +2,7 @@ Weiguo::Application.routes.draw do
 
   get "manage" => "admin#index", as: :admin
   get "site/index"
+  get "buildle" => "site#buildle", as: "buildle"
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout' }
   get "users/index", as:"users"
   resources :f_posts
@@ -21,8 +22,8 @@ Weiguo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'site#index'
-
+  # root 'site#index'
+  root "site#buildle"
   # root "weixin#index"
 
   # Example of regular route:
