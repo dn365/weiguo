@@ -16,7 +16,7 @@
       </tr>
       <tboby>
         <% @cart.each do |item| %>
-          <tr data-product="<%= item.f_post_id %>"  data-user="<%= current_user.id %>">
+          <tr data-product="<%= item.f_post_id %>"  data-user="<%= current_user.id if current_user %>">
             <td>
               <%= image_tag item.f_post.f_image.thumb, size:"40x40", class:"img-rounded" %>
               <%= item.f_post.title %>
