@@ -22,8 +22,8 @@ Weiguo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  # root 'site#index'
-  root "site#buildle"
+  root 'site#index'
+  # root "site#buildle"
   # root "weixin#index"
 
   # Example of regular route:
